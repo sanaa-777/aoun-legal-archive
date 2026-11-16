@@ -1,0 +1,14 @@
+خريطة بنية منصة عون القانونية (من فهرس جوجل + مسح المسارات)
+- /library                       المكتبة القانونية (فهرس موحد)
+- /library?type=law              القوانين واللوائح
+- /library?type=circular         التعاميم
+- /library?type=judgment         الأحكام
+- /library/{id}                  نص قانوني (مثال: /library/134, /library/225, /library/22)
+- /library/principles/{id}       القواعد القضائية (مثال: /principles/6,12,14,15)
+- /articles                      المقالات القانونية - 2,864 مقالاً منشوراً
+- /articles/{id}                 مقال مفرد (عناوين مرقمة حتى 2864+)
+- /articles?author={id}&page=N   مقالات حسب المؤلف
+- /services?type=agency_drafting الخدمات القانونية (صياغة وكالة، عقود، طعون...)
+- /terms                         الشروط والأحكام
+- /privacy                       سياسة الخصوصية
+- التطبيق: https://play.google.com/store/apps/details?id=com.legalclinic.legal_clinic_mobile

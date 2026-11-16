@@ -1,0 +1,10 @@
+تقرير المسح التقني لمنصة عون القانونية - 2026-11-16 UTC
+=================================================================
+1) الموقع يعيد HTTP 503 (وضع صيانة) لجميع المسارات الديناميكية: /library /articles /services /sitemap.xml ... إلخ
+2) مسارات تعمل فعلياً: /terms (200), /privacy (200), /legal/awn-legal.css (200), ملفات /images/brand (200)
+3) خادم: nginx. اسم الجلسة: legal_clinic_preview_session (تطبيق Laravel/PHP)
+4) لا توجد نسخ في Wayback Machine (CDX = 0 للنطاق كامل)
+5) لا توجد نوافذ كاش لـ Bing/Google يمكن جلبها (blocked)
+6) النطاقات الفرعية api/app/backend/admin/cdn غير موجودة (DNS فشل)
+7) التطبيق: com.legalclinic.legal_clinic_mobile (Google Play) - مصادر APK محجوبة
+8) الاستنتاج: المحتوى الحي متاح فقط داخل التطبيق/المنصة بعد انتهاء الصيانة
