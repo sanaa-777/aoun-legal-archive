@@ -1,0 +1,64 @@
+[
+ {
+  "id": 1217,
+  "title": "إنشاء وحدة إدارية مصغرة تعنى بشئون الصم والبكم",
+  "reference_code": "قرار وزير العدل رقم (191) لسنة 2004م",
+  "source_type": "circular",
+  "sort_order": 6290,
+  "authority_category": "وزارة العدل وحقوق الإنسان",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "تعميم",
+  "is_official_source": true,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-26T02:05:09+03:00",
+  "circular_year": 2004,
+  "issued_year": 2004,
+  "category": null,
+  "version": "المسودة الأولى",
+  "offline_revision": "91e0b275400212b3cf15b3b046814d4cadde20cfbab20ffca9a74d05c87eb43b",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "ministry-of-justice",
+    "name_ar": "وزارة العدل"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ },
+ {
+  "id": 1218,
+  "title": "تحديد إختصاصات الإدارة العامة للإعلام والتوعية القضائية",
+  "reference_code": "رقم (618) لسنة 2004م",
+  "source_type": "circular",
+  "sort_order": 6300,
+  "authority_category": "وزارة العدل وحقوق الإنسان",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "تعميم",
+  "is_official_source": true,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-30T03:39:35+03:00",
+  "circular_year": 2004,
+  "issued_year": 2004,
+  "category": null,
+  "version": "المسودة الأولى",
+  "offline_revision": "c65f61ad1b59956c0937a48109a81c9a04549a5bb9ab36cf29608217983bf0b1",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "ministry-of-justice",
+    "name_ar": "وزارة العدل"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

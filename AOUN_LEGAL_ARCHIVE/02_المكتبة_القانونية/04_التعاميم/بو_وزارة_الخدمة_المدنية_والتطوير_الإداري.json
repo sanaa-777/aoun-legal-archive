@@ -1,0 +1,64 @@
+[
+ {
+  "id": 1333,
+  "title": "بالموافقة على  القرار الجمهوري بالقانون رقم (1)لسنة1999م بشأن صندوق الخدمة المدنية.",
+  "reference_code": "قرار مجلس النواب رقم (2)لسنة1999م",
+  "source_type": "circular",
+  "sort_order": 6650,
+  "authority_category": "وزارة الخدمة المدنية والتطوير الإداري",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "تعميم",
+  "is_official_source": true,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-30T03:17:07+03:00",
+  "circular_year": 1995,
+  "issued_year": 1995,
+  "category": null,
+  "version": "المسودة الأولى",
+  "offline_revision": "844992449487e46269f7212699c611c2eec0df5230e5d58088f8e956e39499d0",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "mgls-alnoab",
+    "name_ar": "مجلس النواب"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ },
+ {
+  "id": 1376,
+  "title": "تصنيف المناطق النائية في الجمهورية اليمنية.",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم (2) لسنة 2009م",
+  "source_type": "circular",
+  "sort_order": 6710,
+  "authority_category": "وزارة الخدمة المدنية والتطوير الإداري",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": false,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-11-05T02:14:40+03:00",
+  "circular_year": 2009,
+  "issued_year": 2009,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "1b683ce1efd84ae9149abfa466fa97028f9e0f205caac1266ee0270bfc53b5d0",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

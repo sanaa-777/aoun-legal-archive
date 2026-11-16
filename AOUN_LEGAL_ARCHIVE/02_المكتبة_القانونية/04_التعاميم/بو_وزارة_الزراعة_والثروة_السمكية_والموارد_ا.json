@@ -1,0 +1,33 @@
+[
+ {
+  "id": 1121,
+  "title": "اللائحة التنفيذية لقانون الحجر النباتي",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم (517) لعام2013م بإصدار اللائحة التنفيذية للقانون رقم (7) لعام 2011م بشان الحجر النباتي",
+  "source_type": "circular",
+  "sort_order": 6110,
+  "authority_category": "وزارة الزراعة والثروة السمكية والموارد المائية",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": false,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-23T05:55:34+03:00",
+  "circular_year": 2013,
+  "issued_year": 2013,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "54481197b913117a637ff5c1810fac9d631032798aa627870cf1533929925428",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

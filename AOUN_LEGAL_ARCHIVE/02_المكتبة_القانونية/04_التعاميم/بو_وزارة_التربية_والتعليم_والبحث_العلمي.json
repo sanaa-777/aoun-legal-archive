@@ -1,0 +1,33 @@
+[
+ {
+  "id": 1279,
+  "title": "اللائحة التنظيمية للجهاز التنفيذي للمجلس الأعلى لكليات المجتمع",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم (338) لسنة 2009م",
+  "source_type": "circular",
+  "sort_order": 6430,
+  "authority_category": "وزارة التربية والتعليم والبحث العلمي",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": true,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-29T02:20:24+03:00",
+  "circular_year": 2009,
+  "issued_year": 2009,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "6527c04f858d5823dd6e70232083a31ff561f47ee08588375aa0efda7e0e2332",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

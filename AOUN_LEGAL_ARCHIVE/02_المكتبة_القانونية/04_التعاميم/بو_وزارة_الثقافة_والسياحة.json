@@ -1,0 +1,33 @@
+[
+ {
+  "id": 1216,
+  "title": "لائحة مواصفات التصنيف السياحي لمنشآت الفنادق والإيواء السياحي ومنشآت الطعام والشراب والمنتزهات السياحية",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم (307) لسنة 2007م",
+  "source_type": "circular",
+  "sort_order": 6280,
+  "authority_category": "وزارة الثقافة والسياحة",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": false,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-26T00:41:31+03:00",
+  "circular_year": 2007,
+  "issued_year": 2007,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "5cd250caca392a485d4dbd67d7448b29ef383ce4381c6f56f0a4a71c09e12fd7",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

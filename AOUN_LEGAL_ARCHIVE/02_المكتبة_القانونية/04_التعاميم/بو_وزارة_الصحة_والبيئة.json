@@ -1,0 +1,33 @@
+[
+ {
+  "id": 1213,
+  "title": "لائحة تشجيع وحماية الرضاعة الطبيعية",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم(18)لسنة 2002م",
+  "source_type": "circular",
+  "sort_order": 6260,
+  "authority_category": "وزارة الصحة والبيئة",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": false,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-25T23:47:48+03:00",
+  "circular_year": 2002,
+  "issued_year": 2002,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "52590c1ad2a03d592d1a42c7893ddd0743d1391649471eaaa017fba624dba7d2",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

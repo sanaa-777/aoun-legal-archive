@@ -1,0 +1,33 @@
+[
+ {
+  "id": 1295,
+  "title": "لائحة تنظيم النفقات التشغيلية للخدمات والأنشطة التي يُقدمها المركز اليمني للإستشعار عن بُعد ونظم المعلومات الجغرافية للغير  وتحديد قيمها وتكاليفها.",
+  "reference_code": "قرار رئيس مجلس الوزراء رقم (128) لسنة 2011م",
+  "source_type": "circular",
+  "sort_order": 6450,
+  "authority_category": "وزارة الاتصالات وتقنية المعلومات",
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": "قرار مجلس الوزراء",
+  "is_official_source": true,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-10-29T04:53:17+03:00",
+  "circular_year": 2011,
+  "issued_year": 2011,
+  "category": null,
+  "version": "رسمية",
+  "offline_revision": "79def80210596fd226fe9bb47bae47d3132655df6abe9917ac2b0d6efa9f1abc",
+  "topics": [
+   {
+    "type": "circular_authority",
+    "slug": "krart-mgls-alozraaa",
+    "name_ar": "قرارت مجلس الوزراء"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]

@@ -1,0 +1,36 @@
+[
+ {
+  "id": 1,
+  "title": "دليل عملي: تجهيز ملف الطلب القانوني",
+  "reference_code": "GUIDE-START-001",
+  "source_type": "guide",
+  "sort_order": 10,
+  "authority_category": null,
+  "issuing_person": null,
+  "applicability_scope": null,
+  "source_edition": null,
+  "catalog_row": null,
+  "document_label": null,
+  "is_official_source": false,
+  "legal_status": "effective",
+  "legal_status_label": "نافذ",
+  "published_at": "2026-08-25T03:26:22+03:00",
+  "circular_year": null,
+  "issued_year": null,
+  "category": {
+   "slug": "practical-guides",
+   "name_ar": "أدلة العمل القانوني"
+  },
+  "version": "الإصدار الأول",
+  "offline_revision": "5d704c908e8f3b01557af7a2014abce4936d0f7c55f783dc02e148e7d5075070",
+  "topics": [
+   {
+    "type": "topic",
+    "slug": "case-preparation",
+    "name_ar": "إعداد الملف القانوني"
+   }
+  ],
+  "content_locked": true,
+  "article_matches": []
+ }
+]
