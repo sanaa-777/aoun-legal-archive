@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عون | الأرشيف القانوني الرقمي</title>
-  <meta name="description" content="منصة عون للأرشيف القانوني: مرجع رقمي موثوق للأنظمة والتشريعات والأحكام القضائية والنماذج القانونية المفهرسة." />
+  <title>عون | فهرس الأرشيف القانوني</title>
+  <meta name="description" content="فهرس بحث للبيانات القانونية المحفوظة في مستودع عون، مع تمييز النصوص المحلية عن سجلات الفهرسة وروابط المصدر." />
 
   <!-- Google Fonts: IBM Plex Sans Arabic & Amiri -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -480,7 +480,7 @@
 
     .toolbar-top {
       display: grid;
-      grid-template-columns: 1fr 190px 190px;
+      grid-template-columns: minmax(220px, 1fr) minmax(150px, 190px) minmax(190px, 1.25fr) minmax(150px, 190px);
       gap: 14px;
       margin-bottom: 16px;
     }
@@ -933,6 +933,7 @@
       .features-grid { grid-template-columns: 1fr; }
       .cta-panel { grid-template-columns: 1fr; padding: 30px; }
       .footer-grid { grid-template-columns: 1fr; }
+      .cta-panel { gap: 20px; }
     }
 
     @media (max-width: 768px) {
@@ -944,6 +945,20 @@
       .categories-grid { grid-template-columns: 1fr; }
       .toolbar-top { grid-template-columns: 1fr; }
       .modal-meta-grid { grid-template-columns: 1fr; }
+    }
+
+    .cat-card:focus-visible, .btn:focus-visible, .btn-icon:focus-visible, .pill-btn:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+    @media print {
+      body * { visibility: hidden !important; }
+      #docModal.open, #docModal.open * { visibility: visible !important; }
+      #docModal.open { display: block !important; position: absolute; inset: 0; padding: 0; background: #fff; }
+      #docModal .modal-dialog { max-width: none; max-height: none; border: 0; border-radius: 0; box-shadow: none; }
+      #docModal .modal-body { overflow: visible; }
+      #docModal .modal-footer, #docModal #closeModalBtn { display: none !important; }
+      #docModal .modal-legal-text { color: #111; background: #fff; border: 0; }
     }
 
     /* Mobile Drawer */
@@ -977,7 +992,7 @@
         </div>
         <div class="brand-text">
           <h1>عون القانوني</h1>
-          <span>الأرشيف التشريعي والقضائي</span>
+          <span>فهرس المكتبة القانونية</span>
         </div>
       </a>
 
@@ -985,7 +1000,7 @@
         <li><a href="#categories">التصنيفات</a></li>
         <li><a href="#archive">تصفح الأرشيف</a></li>
         <li><a href="#methodology">منهجية التوثيق</a></li>
-        <li><a href="#request">طلب وثيقة</a></li>
+        <li><a href="#request">حدود الإتاحة</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -995,7 +1010,7 @@
           </svg>
         </button>
         <a href="#archive" class="btn btn-primary nav-cta-desktop">دخول الأرشيف</a>
-        <button class="btn-icon mobile-toggle" id="mobileMenuBtn" aria-label="القائمة">
+        <button class="btn-icon mobile-toggle" id="mobileMenuBtn" aria-label="القائمة" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"/>
             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -1009,7 +1024,7 @@
       <a href="#categories" onclick="closeMobileMenu()">التصنيفات</a>
       <a href="#archive" onclick="closeMobileMenu()">تصفح الأرشيف</a>
       <a href="#methodology" onclick="closeMobileMenu()">منهجية التوثيق</a>
-      <a href="#request" onclick="closeMobileMenu()">طلب وثيقة</a>
+      <a href="#request" onclick="closeMobileMenu()">حدود الإتاحة</a>
     </div>
   </header>
 
@@ -1021,11 +1036,11 @@
       </div>
 
       <h2 class="hero-title">
-        المرجع الرقمي الموثوق <span>للأنظمة والأحكام</span> والوثائق القانونية
+        فهرس الأرشيف القانوني <span>للبحث في</span> السجلات والوثائق
       </h2>
 
       <p class="hero-subtitle">
-        أرشيف منظم ومفهرس بدقة يتيح للمحامين والباحثين والممارسين القانونيين الوصول السريع إلى التشريعات، السوابق القضائية، اللوائح، ونماذج العقود المعتمدة.
+        تصفح بيانات القوانين واللوائح والتعاميم والمقالات والنماذج المحفوظة في المستودع. يعرض الموقع النصوص المحلية المرتبطة فقط، أما بقية السجلات فتظل بيانات فهرسة وروابطاً خارجية.
       </p>
 
       <form class="hero-search-wrap" id="heroSearchForm">
@@ -1033,7 +1048,7 @@
           type="search"
           id="heroSearchInput"
           class="hero-search-input"
-          placeholder="ابحث بعنوان النظام، رقم القرار، السنة، أو كلمة مفتاحية..."
+          placeholder="ابحث بعنوان السجل أو رقمه المرجعي أو سنته المسجلة أو الجهة أو المؤلف..."
         />
         <button type="submit" class="btn btn-primary">بحث في الأرشيف</button>
       </form>
@@ -1047,16 +1062,16 @@
 
       <div class="hero-stats">
         <div class="stat-item">
-          <strong id="statDocsCount">+</strong>
-          <span>وثيقة ومادة مفهرسة</span>
+          <strong id="statDocsCount">جارٍ التحميل</strong>
+          <span>سجل في ملفات الفهرس</span>
         </div>
         <div class="stat-item">
-          <strong>6 مجموعات</strong>
-          <span>تصنيف موضوعي وزمني دقيق</span>
+          <strong id="statGroupCount">—</strong>
+          <span>مجموعات بيانات موجودة</span>
         </div>
         <div class="stat-item">
-          <strong>بيانات أرشيفية</strong>
-          <span>تظهر حدود توفر النص الكامل بوضوح</span>
+          <strong>حالة النص</strong>
+          <span>المتن المحلي مميز عن بيانات الفهرسة</span>
         </div>
       </div>
     </div>
@@ -1068,57 +1083,12 @@
       <div class="section-header">
         <div>
           <span class="section-kicker">أقسام المكتبة</span>
-          <h2 class="section-title">تصفح الأرشيف حسب التصنيف القانوني</h2>
-          <p class="section-desc">هيكلة معيارية تسهّل الوصول إلى المصدر القانوني المطلوب دون عناء البحث العشوائي.</p>
+          <h2 class="section-title">تصفح الأرشيف حسب نوع السجل</h2>
+          <p class="section-desc">التصنيفات والأعداد مستمدة من سجلات المستودع، وقد تشمل بيانات تعريفية لا نصوصاً كاملة.</p>
         </div>
       </div>
 
-      <div class="categories-grid" id="categoryCards"></div>
-          <h3>التشريعات والأنظمة</h3>
-          <p>نصوص القوانين الأساسية والتعديلات التشريعية مرتبة حسب تاريخ الصدور والنفاذ.</p>
-          <span class="cat-count">عرض الوثائق ←</span>
-        </div>
-
-        <div class="cat-card" onclick="jumpToCategory('أحكام')">
-          <div class="cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-          </div>
-          <h3>الأحكام والسوابق القضائية</h3>
-          <p>مختارات من المبادئ والأحكام الصادرة عن المحاكم العليا والدوائر المتخصصة.</p>
-          <span class="cat-count">عرض الوثائق ←</span>
-        </div>
-
-        <div class="cat-card" onclick="jumpToCategory('لوائح')">
-          <div class="cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="8" y1="10" x2="16" y2="10"/>
-              <line x1="8" y1="14" x2="16" y2="14"/>
-              <line x1="8" y1="18" x2="12" y2="18"/>
-            </svg>
-          </div>
-          <h3>اللوائح والقرارات</h3>
-          <p>اللوائح التنفيذية والتعميمات الإدارية والقرارات التنظيمية المرتبطة بالأنظمة.</p>
-          <span class="cat-count">عرض الوثائق ←</span>
-        </div>
-
-        <div class="cat-card" onclick="jumpToCategory('عقود')">
-          <div class="cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 20h9"/>
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-            </svg>
-          </div>
-          <h3>الصيغ والعقود</h3>
-          <p>نماذج عقود ومذكرات وصيغ قانونية محررة بدقة وقابلة للتكييف المهني.</p>
-          <span class="cat-count">عرض الوثائق ←</span>
-        </div>
-      </div>
+      <div class="categories-grid" id="categoryCards" aria-live="polite"></div>
     </div>
   </section>
 
@@ -1129,7 +1099,7 @@
         <div>
           <span class="section-kicker">محرك الأرشيف</span>
           <h2 class="section-title">الوثائق والسجلات المفهرسة</h2>
-          <p class="section-desc">ابحث، صفِّ النتائج، وافتح أي وثيقة للمعاينة المباشرة أو نسخ الاقتباس الرسمي.</p>
+          <p class="section-desc">ابحث في بيانات السجلات، ثم افتح الصفحة المحلية أو رابط المصدر إذا كان مدرجاً. لا يفترض وجود متن كامل لكل سجل.</p>
         </div>
       </div>
 
@@ -1139,12 +1109,12 @@
             type="search"
             id="archiveSearch"
             class="input-control"
-            placeholder="تصفية بالعنوان، الرقم المرجعي، أو الكلمات المفتاحية..."
+            placeholder="تصفية بالعنوان أو المرجع أو الجهة أو المؤلف أو الكلمات المسجلة..."
           />
           <select id="yearFilter" class="select-control" aria-label="تصفية حسب السنة">
             <option value="all">كل السنوات</option>
           </select>
-          <select id="branchFilter" class="select-control" aria-label="تصفية حسب الجهة أو الفرع"><option value="all">كل الجهات والفروع</option></select>
+          <select id="branchFilter" class="select-control" aria-label="تصفية حسب الجهة أو المؤلف أو نطاق التطبيق"><option value="all">كل الجهات والمؤلفين ونطاقات التطبيق</option></select>
           <select id="sortFilter" class="select-control" aria-label="ترتيب النتائج">
             <option value="newest">الأحدث إصداراً</option>
             <option value="oldest">الأقدم إصداراً</option>
@@ -1153,15 +1123,7 @@
         </div>
 
         <div class="filter-pills">
-          <div class="pills-group" id="categoryPills">
-            <button type="button" class="pill-btn active" data-cat="all">الكل</button>
-            <button type="button" class="pill-btn" data-cat="قوانين">القوانين</button>
-            <button type="button" class="pill-btn" data-cat="لوائح وقرارات">اللوائح والقرارات</button>
-            <button type="button" class="pill-btn" data-cat="تعاميم">التعاميم</button>
-            <button type="button" class="pill-btn" data-cat="أدلة تطبيقية">الأدلة</button>
-            <button type="button" class="pill-btn" data-cat="مقالات قانونية">المقالات القانونية</button>
-            <button type="button" class="pill-btn" data-cat="نماذج وعقود">النماذج والعقود</button>
-          </div>
+          <div class="pills-group" id="categoryPills" aria-label="تصفية حسب نوع السجل"></div>
           <div class="results-meta" id="resultsCount">جاري التحميل...</div>
         </div>
       </div>
@@ -1176,50 +1138,47 @@
       <div class="section-header">
         <div>
           <span class="section-kicker">معايير الجودة</span>
-          <h2 class="section-title">لماذا يعتمد الباحثون على أرشيف عون؟</h2>
+          <h2 class="section-title">كيف تقرأ هذا الفهرس؟</h2>
         </div>
       </div>
 
       <div class="features-grid">
         <div class="feature-box">
           <div class="feature-num">01</div>
-          <h3>توثيق مرجعي منضبط</h3>
-          <p>تُحفظ كل وثيقة برقمها المرجعي وسنة إصدارها والجهة المصدرة لها لتسهيل الاستشهاد الأكاديمي والمهني.</p>
+          <h3>الحقول المسجلة</h3>
+          <p>يعرض الفهرس العنوان والمرجع والسنة والجهة أو المؤلف عند ورود هذه البيانات في ملفات المستودع. الحقول غير الواردة لا تُستنتج.</p>
         </div>
         <div class="feature-box">
           <div class="feature-num">02</div>
-          <h3>قراءة مريحة وطباعة فورية</h3>
-          <p>نصوص منسقة بخطوط واضحة ومهيأة للعرض على مختلف الشاشات مع خيار نسخ الاقتباس الرسمي بضغطة زر.</p>
+          <h3>حدود النصوص</h3>
+          <p>لا ينشئ الموقع نصوصاً قانونية. يربط بالصفحات المحلية الموجودة، ويعرض لبقية السجلات بياناتها وروابطها فقط.</p>
         </div>
         <div class="feature-box">
           <div class="feature-num">03</div>
-          <h3>تحديث وتوسع مستمر</h3>
-          <p>إضافة مستمرة للتعديلات التشريعية والمبادئ القضائية الحديثة وإتاحة طلب إدراج الوثائق المفقودة.</p>
+          <h3>الوصول إلى المصدر</h3>
+          <p>تعتمد الروابط الخارجية على توفر موقع المصدر. قد يتعذر فتحها؛ عندها تبقى البيانات الظاهرة هي بيانات الفهرسة المحفوظة في المستودع.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Request Document CTA -->
+  <!-- Archive availability notice -->
   <section class="section" id="request" style="padding-top: 10px;">
     <div class="container">
       <div class="cta-panel">
         <div>
-          <h2>هل تبحث عن نظام أو سابقة غير مدرجة؟</h2>
-          <p>ساهم في إثراء أرشيف عون القانوني بإرسال طلب فهرسة لوثيقة أو قرار قضائي ليتم تدقيقه وإضافته في أقرب تحديث.</p>
+          <h2>حدود الإتاحة</h2>
+          <p>هذه الصفحة واجهة بحث لملفات الأرشيف الموجودة في المستودع. لا ترسل طلبات ولا تجمع بيانات الزوار.</p>
           <ul class="cta-points">
-            <li>✓ تدقيق النص مقارنةً بالمصدر الرسمي</li>
-            <li>✓ فهرسة الكلمات المفتاحية والرقم المرجعي</li>
-            <li>✓ إتاحة المعاينة والتحميل للجميع</li>
+            <li>تُعرض الحقول كما وردت في ملفات المصدر، من دون استنتاج مرجع أو سنة مفقودة.</li>
+            <li>تفتح النصوص والنماذج المحلية من ملفات الموقع عند وجودها.</li>
+            <li>يتوقف فتح الروابط الخارجية على توفر موقع المصدر.</li>
           </ul>
         </div>
-
-        <form class="cta-form" id="requestForm">
-          <input type="text" id="reqTitle" placeholder="اسم الوثيقة أو النظام المطلوب" required />
-          <input type="text" id="reqRef" placeholder="الرقم المرجعي أو سنة الإصدار (إن وجد)" />
-          <textarea id="reqNotes" rows="3" placeholder="ملاحظات إضافية أو بريدك للتواصل..."></textarea>
-          <button type="submit" class="btn btn-primary">إرسال طلب الإدراج</button>
-        </form>
+        <div class="cta-form" role="note">
+          <h3>طلبات الإدراج غير متاحة</h3>
+          <p>لا توجد خدمة استقبال طلبات مرتبطة بهذا الموقع حالياً؛ لم يتم توفير نموذج إرسال.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1241,7 +1200,7 @@
             <li><a href="#categories">التصنيفات القانونية</a></li>
             <li><a href="#archive">تصفح الأرشيف</a></li>
             <li><a href="#methodology">منهجية التوثيق</a></li>
-            <li><a href="#request">طلب إدراج وثيقة</a></li>
+            <li><a href="#request">حدود الإتاحة</a></li>
           </ul>
         </div>
 
@@ -1254,8 +1213,8 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="currentYear"></span> عون للأرشيف القانوني. جميع الحقوق محفوظة.</span>
-        <span>مصمم لسهولة القراءة والبحث القانوني</span>
+        <span>فهرس مبني على ملفات هذا المستودع؛ راجع بيانات المصدر قبل الاستناد إليها.</span>
+        <span>النصوص غير المتاحة محلياً لا تُعاد صياغتها أو توليدها</span>
       </div>
     </div>
   </footer>
@@ -1268,21 +1227,21 @@
           <span class="doc-badge" id="modalCategory" style="margin-bottom: 8px;"></span>
           <h3 id="modalTitle" style="font-size: 1.2rem; line-height: 1.4;"></h3>
         </div>
-        <button class="btn-icon" id="closeModalBtn" aria-label="إغلاق">✕</button>
+        <button class="btn btn-outline btn-sm" id="closeModalBtn" aria-label="إغلاق النافذة">إغلاق</button>
       </div>
 
       <div class="modal-body">
         <div class="modal-meta-grid">
           <div>
-            <span>الرقم المرجعي</span>
+            <span>المرجع المسجل</span>
             <strong id="modalRef"></strong>
           </div>
           <div>
-            <span>سنة الإصدار</span>
+            <span>السنة المسجلة</span>
             <strong id="modalYear"></strong>
           </div>
           <div>
-            <span>الجهة المصدرة</span>
+            <span>الجهة أو المؤلف</span>
             <strong id="modalIssuer"></strong>
           </div>
         </div>
@@ -1292,12 +1251,10 @@
 
       <div class="modal-footer">
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button type="button" class="btn btn-outline btn-sm" id="copyCitationBtn">نسخ الاقتباس الرسمي</button>
-          <button type="button" class="btn btn-outline btn-sm" id="printDocBtn">طباعة النص</button>
+          <button type="button" class="btn btn-outline btn-sm" id="copyCitationBtn">نسخ بيانات السجل</button>
+          <button type="button" class="btn btn-outline btn-sm" id="printDocBtn">طباعة بيانات السجل</button>
         </div>
-        <a href="#" id="modalDownloadLink" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-          فتح / تحميل PDF
-        </a>
+        <a href="#" id="modalSourceLink" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" hidden></a>
       </div>
     </div>
   </div>
@@ -1305,10 +1262,15 @@
   <!-- Toast Notification -->
   <div class="toast" id="toast"></div>
 
-  <script>
+<script>
+    'use strict';
     let LEGAL_DOCS = [];
     let activeCategory = 'all';
     let currentModalDoc = null;
+    let lastFilterKey = '';
+    let visibleLimit = 60;
+    let lastFocusedElement = null;
+
     const docsGrid = document.getElementById('docsGrid');
     const archiveSearch = document.getElementById('archiveSearch');
     const yearFilter = document.getElementById('yearFilter');
@@ -1318,44 +1280,286 @@
     const categoryPills = document.getElementById('categoryPills');
     const docModal = document.getElementById('docModal');
     const toastEl = document.getElementById('toast');
-    const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    function populateFilters(){
-      const years=[...new Set(LEGAL_DOCS.map(d=>d.year).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
-      years.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=`سنة ${y}`;yearFilter.appendChild(o)});
-      const branches=[...new Set(LEGAL_DOCS.map(d=>d.branch).filter(x=>x&&x!=='غير مصنف'))].sort((a,b)=>a.localeCompare(b,'ar'));
-      branches.forEach(b=>{const o=document.createElement('option');o.value=b;o.textContent=b;branchFilter.appendChild(o)});
-      document.getElementById('statDocsCount').textContent=LEGAL_DOCS.length.toLocaleString('ar');
-      const summaries={'قوانين':'القوانين والأنظمة اليمنية المفهرسة','لوائح وقرارات':'اللوائح والقرارات التنظيمية','تعاميم':'التعاميم بحسب الجهة والفرع','أدلة تطبيقية':'أدلة العمل القانوني المتاحة','مقالات قانونية':'مقالات قانونية مفهرسة','نماذج وعقود':'قوالب العقود والنماذج المحلية'};
-      document.getElementById('categoryCards').innerHTML=Object.entries(summaries).map(([name,desc])=>`<div class="cat-card" role="button" tabindex="0" onclick="jumpToCategory('${name}')"><div class="cat-icon">§</div><h3>${escapeHtml(name)}</h3><p>${desc}</p><span class="cat-count">${LEGAL_DOCS.filter(d=>d.category===name).length.toLocaleString('ar')} سجل · تصفح ←</span></div>`).join('');
+    const categoryLabels = {
+      'قوانين': 'قوانين وأنظمة مفهرسة',
+      'لوائح وقرارات': 'لوائح وقرارات مسجلة',
+      'تعاميم': 'تعاميم واردة في الفهرس',
+      'أدلة تطبيقية': 'أدلة موجودة في الأرشيف',
+      'مقالات قانونية': 'مقالات مدرجة في ملف المقالات',
+      'نصوص محلية': 'نص محفوظ ضمن ملفات الموقع',
+      'نماذج وعقود': 'نماذج محفوظة محلياً'
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[ch]));
     }
-    function renderDocs(){
-      const q=archiveSearch.value.trim().toLocaleLowerCase('ar'), y=yearFilter.value, branch=branchFilter.value, sort=sortFilter.value;
-      let data=LEGAL_DOCS.filter(d=>(activeCategory==='all'||d.category===activeCategory)&&(y==='all'||String(d.year)===y)&&(branch==='all'||d.branch===branch)&&(!q||[d.title,d.ref,d.category,d.kind,d.issuer,d.branch,d.status,d.description,...(d.topics||[])].join(' ').toLocaleLowerCase('ar').includes(q)));
-      if(sort==='newest')data.sort((a,b)=>(Number(b.year)||0)-(Number(a.year)||0));else if(sort==='oldest')data.sort((a,b)=>(Number(a.year)||0)-(Number(b.year)||0));else data.sort((a,b)=>a.title.localeCompare(b.title,'ar'));
-      resultsCount.textContent=`عرض ${data.length.toLocaleString('ar')} من أصل ${LEGAL_DOCS.length.toLocaleString('ar')} سجل`;
-      if(!data.length){docsGrid.innerHTML='<div class="empty-state"><h3>لم يتم العثور على نتائج</h3><p>جرّب تغيير عبارة البحث أو المرشحات.</p><button class="btn btn-primary btn-sm" onclick="resetFilters()">إعادة ضبط البحث</button></div>';return}
-      docsGrid.innerHTML=data.slice(0,120).map(d=>`<article class="doc-card"><div class="doc-meta-top"><span class="doc-badge">${escapeHtml(d.category)} · ${escapeHtml(d.kind)}</span><span class="doc-ref">${escapeHtml(d.ref)}${d.year?' • '+escapeHtml(d.year):''}</span></div><h3 class="doc-title">${escapeHtml(d.title)}</h3><p class="doc-summary">${escapeHtml(d.description)}</p><div class="doc-tags"><span class="doc-tag">${escapeHtml(d.issuer)}</span><span class="doc-tag">${escapeHtml(d.branch)}</span><span class="doc-tag">${escapeHtml(d.status)}</span></div><div class="doc-actions"><button class="btn btn-primary btn-sm" onclick="openDocModal('${escapeHtml(d.id)}')">تفاصيل السجل</button><a class="btn btn-outline btn-sm" href="${escapeHtml(d.localUrl||d.url)}" target="_blank" rel="noopener">${d.localUrl?'فتح داخل الأرشيف':'المصدر / التفاصيل'}</a></div></article>`).join('')+(data.length>120?`<div class="empty-state"><p>تُعرض أول 120 نتيجة من ${data.length.toLocaleString('ar')} نتيجة. استخدم البحث أو المرشحات لتضييق النتائج.</p></div>`:'');
+    function normalizeSearch(value) {
+      return String(value ?? '').normalize('NFKC').toLocaleLowerCase('ar')
+        .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
+        .replace(/ـ/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي');
     }
-    function resetFilters(){archiveSearch.value='';yearFilter.value='all';branchFilter.value='all';sortFilter.value='newest';setActiveCategory('all');renderDocs()}
-    function setActiveCategory(cat){activeCategory=cat;document.querySelectorAll('#categoryPills .pill-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat))}
-    function jumpToCategory(cat){setActiveCategory(cat);renderDocs();document.getElementById('archive').scrollIntoView({behavior:'smooth'})}
-    function openDocModal(id){const d=LEGAL_DOCS.find(x=>x.id===id);if(!d)return;currentModalDoc=d;document.getElementById('modalCategory').textContent=`${d.category} · ${d.kind}`;document.getElementById('modalTitle').textContent=d.title;document.getElementById('modalRef').textContent=d.ref;document.getElementById('modalYear').textContent=d.year||'غير متاح';document.getElementById('modalIssuer').textContent=d.issuer;document.getElementById('modalContent').textContent=`التصنيف: ${d.category}\nالفرع / الجهة: ${d.branch}\nنوع السجل: ${d.kind}\nالحالة: ${d.status}\n\n${d.description}\n\n${d.locked?'النص الكامل غير موجود في نسخة الأرشيف المتاحة؛ استخدم رابط المصدر للاطلاع على التفاصيل إن كانت متاحة.':'هذا نموذج استرشادي محفوظ في المستودع وليس نصاً تشريعياً.'}`;const a=document.getElementById('modalDownloadLink');a.href=d.localUrl||d.url;a.textContent=d.localUrl?'فتح السجل / النموذج':'فتح المصدر';docModal.classList.add('open');document.body.style.overflow='hidden'}
-    function closeDocModal(){docModal.classList.remove('open');document.body.style.overflow=''}
-    let toastTimer;function showToast(s){toastEl.textContent=s;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),3200)}
-    document.documentElement.setAttribute('data-theme',localStorage.getItem('aoun_theme')||'light');
-    document.getElementById('themeToggle').addEventListener('click',()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;localStorage.setItem('aoun_theme',t)});
-    document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
-    function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-    categoryPills.addEventListener('click',e=>{const b=e.target.closest('.pill-btn');if(b){setActiveCategory(b.dataset.cat);renderDocs()}});
-    archiveSearch.addEventListener('input',renderDocs);yearFilter.addEventListener('change',renderDocs);branchFilter.addEventListener('change',renderDocs);sortFilter.addEventListener('change',renderDocs);
-    document.getElementById('heroSearchForm').addEventListener('submit',e=>{e.preventDefault();archiveSearch.value=document.getElementById('heroSearchInput').value;renderDocs();document.getElementById('archive').scrollIntoView({behavior:'smooth'})});
-    document.querySelectorAll('.quick-tag').forEach(b=>b.addEventListener('click',()=>{archiveSearch.value=b.dataset.quick;setActiveCategory('all');renderDocs();document.getElementById('archive').scrollIntoView({behavior:'smooth'})}));
-    document.getElementById('closeModalBtn').addEventListener('click',closeDocModal);docModal.addEventListener('click',e=>{if(e.target===docModal)closeDocModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDocModal()});
-    document.getElementById('copyCitationBtn').addEventListener('click',()=>{if(!currentModalDoc)return;const d=currentModalDoc;const text=`${d.title} — ${d.ref}، ${d.year||'دون سنة'}، الجهة: ${d.issuer}.`;navigator.clipboard?.writeText(text).then(()=>showToast('تم نسخ بيانات الاستشهاد.')).catch(()=>showToast('تعذر النسخ التلقائي.'))});
-    document.getElementById('printDocBtn').addEventListener('click',()=>window.print());
-    document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDefault();showToast('نموذج الطلب تجريبي ولم يُربط بخدمة استقبال بعد.');e.target.reset()});
-    document.getElementById('currentYear').textContent=new Date().getFullYear();
-    fetch('assets/legal_docs.json').then(r=>{if(!r.ok)throw new Error('تعذر تحميل فهرس الأرشيف');return r.json()}).then(data=>{LEGAL_DOCS=data;populateFilters();renderDocs()}).catch(err=>{resultsCount.textContent='تعذر تحميل بيانات الأرشيف';docsGrid.innerHTML=`<div class="empty-state"><h3>تعذر تحميل الفهرس</h3><p>${escapeHtml(err.message)}</p></div>`});
+    function formatCount(value) { return Number(value).toLocaleString('ar'); }
+    function recordFacetValues(record) {
+      return [record.issuer ? `${record.category === 'مقالات قانونية' ? 'مؤلف' : 'جهة'}: ${record.issuer}` : '', record.scope ? `نطاق التطبيق: ${record.scope}` : ''].filter(Boolean);
+    }
+    function getRecordHref(record) {
+      if (record.localUrl) return record.localUrl;
+      if (record.url && /^https:\/\/www\.awnlegal\.com\//.test(record.url)) return record.url;
+      return null;
+    }
+    function populateFilters() {
+      const years = [...new Set(LEGAL_DOCS.map(record => record.year == null ? '' : String(record.year).trim()).filter(Boolean))]
+        .sort((a, b) => Number(b) - Number(a) || b.localeCompare(a, 'ar'));
+      years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = `سنة مسجلة ${year}`;
+        yearFilter.appendChild(option);
+      });
+      const facets = [...new Set(LEGAL_DOCS.flatMap(recordFacetValues))]
+        .filter(Boolean).sort((a, b) => a.localeCompare(b, 'ar'));
+      facets.forEach(facet => {
+        const option = document.createElement('option');
+        option.value = facet;
+        option.textContent = facet;
+        branchFilter.appendChild(option);
+      });
+      document.getElementById('statDocsCount').textContent = formatCount(LEGAL_DOCS.length);
+      document.getElementById('statGroupCount').textContent = formatCount(new Set(LEGAL_DOCS.map(record => record.category)).size);
+      const categoryNames = [...new Set(LEGAL_DOCS.map(record => record.category))].sort((a, b) => a.localeCompare(b, 'ar'));
+      const cards = categoryNames.map(name => [name, categoryLabels[name] || 'سجلات مستمدة من ملفات المصدر.']);
+      document.getElementById('categoryCards').innerHTML = cards.map(([name, description]) => {
+        const count = LEGAL_DOCS.filter(record => record.category === name).length;
+        return `<div class="cat-card" role="button" tabindex="0" data-category-card="${escapeHtml(name)}">
+          <h3>${escapeHtml(name)}</h3><p>${escapeHtml(description)}</p>
+          <span class="cat-count">${formatCount(count)} سجل</span></div>`;
+      }).join('');
+      categoryPills.innerHTML = '<button type="button" class="pill-btn active" data-cat="all" aria-pressed="true">الكل</button>' +
+        cards.map(([name]) => `<button type="button" class="pill-btn" data-cat="${escapeHtml(name)}" aria-pressed="false">${escapeHtml(name)}</button>`).join('');
+    }
+    function renderDocs() {
+      const query = normalizeSearch(archiveSearch.value.trim());
+      const year = yearFilter.value;
+      const facet = branchFilter.value;
+      const sort = sortFilter.value;
+      const filterKey = JSON.stringify([query, year, facet, sort, activeCategory]);
+      if (filterKey !== lastFilterKey) {
+        visibleLimit = 60;
+        lastFilterKey = filterKey;
+      }
+      const filtered = LEGAL_DOCS.filter(record => {
+        const categoryMatches = activeCategory === 'all' || record.category === activeCategory;
+        const yearMatches = year === 'all' || String(record.year ?? '') === year;
+        const facetMatches = facet === 'all' || recordFacetValues(record).includes(facet);
+        const searchable = normalizeSearch([
+          record.title, record.ref, record.category, record.kind, record.issuer,
+          record.scope, record.status, record.description, ...(record.topics || [])
+        ].filter(Boolean).join(' '));
+        return categoryMatches && yearMatches && facetMatches && (!query || searchable.includes(query));
+      });
+      filtered.sort((a, b) => {
+        if (sort === 'title') return a.title.localeCompare(b.title, 'ar');
+        const delta = (Number(a.year) || 0) - (Number(b.year) || 0);
+        if (delta) return sort === 'oldest' ? delta : -delta;
+        return a.title.localeCompare(b.title, 'ar');
+      });
+      resultsCount.textContent = `عرض ${formatCount(filtered.length)} من أصل ${formatCount(LEGAL_DOCS.length)} سجل`;
+      if (!filtered.length) {
+        docsGrid.innerHTML = '<div class="empty-state"><h3>لا توجد سجلات مطابقة</h3><p>غيّر عبارة البحث أو خيارات التصفية ثم حاول مرة أخرى.</p><button type="button" class="btn btn-primary btn-sm" data-reset-filters>مسح التصفية</button></div>';
+        return;
+      }
+      const shown = filtered.slice(0, visibleLimit);
+      docsGrid.innerHTML = shown.map(record => {
+        const href = getRecordHref(record);
+        const meta = [
+          record.ref ? `المرجع: ${record.ref}` : 'لا يوجد مرجع مدون في السجل',
+          record.year ? `السنة المسجلة: ${record.year}` : ''
+        ].filter(Boolean).join('، ');
+        const tags = [
+          record.issuer ? `الجهة أو المؤلف: ${record.issuer}` : '',
+          record.scope ? `نطاق التطبيق: ${record.scope}` : '',
+          record.status ? `الحالة المسجلة: ${record.status}` : ''
+        ].filter(Boolean);
+        const linkLabel = record.localUrl ? (record.category === 'نماذج وعقود' ? 'فتح النموذج المحلي' : 'عرض النص المحلي') : 'فتح صفحة المصدر';
+        return `<article class="doc-card">
+          <div class="doc-meta-top"><span class="doc-badge">${escapeHtml(record.category)}${record.category === 'مقالات قانونية' && record.kind === 'مقال قانوني' ? '' : `، ${escapeHtml(record.kind)}`}</span><span class="doc-ref">${escapeHtml(meta)}</span></div>
+          <h3 class="doc-title">${escapeHtml(record.title)}</h3>
+          <p class="doc-summary">${escapeHtml(record.description)}</p>
+          ${tags.length ? `<div class="doc-tags">${tags.map(tag => `<span class="doc-tag">${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
+          <div class="doc-actions"><button type="button" class="btn btn-primary btn-sm" data-open-record="${escapeHtml(record.id)}">بيانات السجل</button>
+          ${href ? `<a class="btn btn-outline btn-sm" href="${escapeHtml(href)}" ${record.localUrl ? '' : 'target="_blank" rel="noopener noreferrer"'}>${linkLabel}</a>` : ''}</div>
+        </article>`;
+      }).join('');
+      if (filtered.length > shown.length) {
+        docsGrid.insertAdjacentHTML('beforeend', `<div class="empty-state results-more"><p>المعروض ${formatCount(shown.length)} من ${formatCount(filtered.length)} سجل.</p><button type="button" class="btn btn-outline btn-sm" data-show-more>عرض المزيد</button></div>`);
+      }
+    }
+    function resetFilters() {
+      archiveSearch.value = '';
+      yearFilter.value = 'all';
+      branchFilter.value = 'all';
+      sortFilter.value = 'newest';
+      setActiveCategory('all');
+      renderDocs();
+    }
+    function setActiveCategory(category) {
+      activeCategory = category;
+      document.querySelectorAll('#categoryPills .pill-btn').forEach(button => {
+        const active = button.dataset.cat === category;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+    }
+    function jumpToCategory(category) {
+      setActiveCategory(category);
+      renderDocs();
+      document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
+    }
+    function openDocModal(id) {
+      const record = LEGAL_DOCS.find(item => item.id === id);
+      if (!record) return;
+      currentModalDoc = record;
+      lastFocusedElement = document.activeElement;
+      document.getElementById('modalCategory').textContent = `${record.category}، ${record.kind}`;
+      document.getElementById('modalTitle').textContent = record.title;
+      document.getElementById('modalRef').textContent = record.ref || 'غير مدون في السجل';
+      document.getElementById('modalYear').textContent = record.year || 'غير مدونة';
+      document.getElementById('modalIssuer').textContent = record.issuer || 'غير مدونة';
+      const details = [
+        `التصنيف: ${record.category}`,
+        record.scope ? `نطاق التطبيق: ${record.scope}` : '',
+        `نوع السجل: ${record.kind}`,
+        record.status ? `الحالة كما وردت في الملف: ${record.status}` : '',
+        '', record.description,
+        '', record.localTextAvailable
+          ? 'توجد صفحة محلية مرتبطة بهذا السجل. راجع مصدرها وتاريخها قبل الاستناد إليها.'
+          : 'تعرض هذه الواجهة بيانات الفهرسة فقط؛ متن الوثيقة غير محفوظ ضمن النسخة المحلية.'
+      ].filter((line, index, all) => line !== '' || (index > 0 && all[index - 1] !== ''));
+      document.getElementById('modalContent').textContent = details.join('\n');
+      const link = document.getElementById('modalSourceLink');
+      const href = getRecordHref(record);
+      link.href = href || '#';
+      link.textContent = record.localUrl ? (record.category === 'نماذج وعقود' ? 'فتح النموذج المحلي' : 'عرض النص المحلي') : 'فتح صفحة المصدر';
+      link.hidden = !href;
+      docModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('closeModalBtn').focus();
+    }
+    function closeDocModal() {
+      docModal.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+    }
+    let toastTimer;
+    function showToast(message) {
+      toastEl.textContent = message;
+      toastEl.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
+    }
+    function getStoredTheme() {
+      try { return localStorage.getItem('aoun_theme') || 'light'; }
+      catch (_) { return 'light'; }
+    }
+    function setStoredTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      try { localStorage.setItem('aoun_theme', theme); } catch (_) { /* Storage may be disabled. */ }
+    }
+
+    setStoredTheme(getStoredTheme());
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      setStoredTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuButton = document.getElementById('mobileMenuBtn');
+    mobileMenuButton.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      mobileMenuButton.setAttribute('aria-expanded', String(open));
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    }
+    categoryPills.addEventListener('click', event => {
+      const button = event.target.closest('.pill-btn');
+      if (!button) return;
+      setActiveCategory(button.dataset.cat);
+      renderDocs();
+    });
+    document.getElementById('categoryCards').addEventListener('click', event => {
+      const card = event.target.closest('[data-category-card]');
+      if (card) jumpToCategory(card.dataset.categoryCard);
+    });
+    document.getElementById('categoryCards').addEventListener('keydown', event => {
+      const card = event.target.closest('[data-category-card]');
+      if (card && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        jumpToCategory(card.dataset.categoryCard);
+      }
+    });
+    docsGrid.addEventListener('click', event => {
+      const recordButton = event.target.closest('[data-open-record]');
+      if (recordButton) openDocModal(recordButton.dataset.openRecord);
+      if (event.target.closest('[data-reset-filters]')) resetFilters();
+      if (event.target.closest('[data-show-more]')) {
+        visibleLimit += 60;
+        renderDocs();
+      }
+    });
+    archiveSearch.addEventListener('input', renderDocs);
+    yearFilter.addEventListener('change', renderDocs);
+    branchFilter.addEventListener('change', renderDocs);
+    sortFilter.addEventListener('change', renderDocs);
+    document.getElementById('heroSearchForm').addEventListener('submit', event => {
+      event.preventDefault();
+      archiveSearch.value = document.getElementById('heroSearchInput').value;
+      setActiveCategory('all');
+      renderDocs();
+      document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.querySelectorAll('.quick-tag').forEach(button => button.addEventListener('click', () => {
+      archiveSearch.value = button.dataset.quick;
+      setActiveCategory('all');
+      renderDocs();
+      document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
+    }));
+    document.getElementById('closeModalBtn').addEventListener('click', closeDocModal);
+    docModal.addEventListener('click', event => { if (event.target === docModal) closeDocModal(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && docModal.classList.contains('open')) closeDocModal(); });
+    document.getElementById('copyCitationBtn').addEventListener('click', async () => {
+      if (!currentModalDoc) return;
+      const record = currentModalDoc;
+      const fields = [record.title, record.ref, record.year, record.issuer].filter(Boolean);
+      const citation = fields.join('، ');
+      try {
+        if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(citation);
+        showToast('تم نسخ بيانات السجل المتاحة.');
+      } catch (_) {
+        showToast('تعذر النسخ في هذا المتصفح.');
+      }
+    });
+    document.getElementById('printDocBtn').addEventListener('click', () => window.print());
+
+    fetch('assets/legal_docs.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`تعذر تحميل ملف البيانات (${response.status})`);
+        return response.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data) || !data.every(record => record && record.id && record.title && record.category)) {
+          throw new Error('صيغة ملف البيانات غير صالحة');
+        }
+        LEGAL_DOCS = data;
+        populateFilters();
+        renderDocs();
+      })
+      .catch(error => {
+        resultsCount.textContent = 'تعذر تحميل البيانات';
+        docsGrid.innerHTML = `<div class="empty-state"><h3>لم يتم تحميل الفهرس</h3><p>${escapeHtml(error.message)}</p><button type="button" class="btn btn-outline btn-sm" onclick="location.reload()">إعادة المحاولة</button></div>`;
+      });
   </script>
 </body>
 </html>
