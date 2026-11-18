@@ -51,7 +51,7 @@ class LegalIndexTests(unittest.TestCase):
 
     def test_page_has_single_dynamic_category_container(self):
         self.assertEqual(self.html.count('id="categoryCards"'), 1)
-        self.assertIn("fetch('assets/legal_docs.json')", self.html)
+        self.assertIn("fetch('assets/legal_docs.json?v=", self.html)
         self.assertIn('data-show-more', self.html)
         self.assertIn('statGroupCount', self.html)
         self.assertIn('categoryPills.innerHTML', self.html)

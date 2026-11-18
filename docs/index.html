@@ -1328,7 +1328,12 @@
       });
       document.getElementById('statDocsCount').textContent = formatCount(LEGAL_DOCS.length);
       document.getElementById('statGroupCount').textContent = formatCount(new Set(LEGAL_DOCS.map(record => record.category)).size);
-      const categoryNames = [...new Set(LEGAL_DOCS.map(record => record.category))].sort((a, b) => a.localeCompare(b, 'ar'));
+      const categoryOrder = ['قوانين', 'نصوص محلية', 'لوائح وقرارات', 'تعاميم', 'أدلة تطبيقية', 'مقالات قانونية', 'نماذج وعقود'];
+      const categoryNames = [...new Set(LEGAL_DOCS.map(record => record.category))].sort((a, b) => {
+        const ai = categoryOrder.indexOf(a), bi = categoryOrder.indexOf(b);
+        if (ai < 0 && bi < 0) return a.localeCompare(b, 'ar');
+        return (ai < 0 ? categoryOrder.length : ai) - (bi < 0 ? categoryOrder.length : bi);
+      });
       const cards = categoryNames.map(name => [name, categoryLabels[name] || 'سجلات مستمدة من ملفات المصدر.']);
       document.getElementById('categoryCards').innerHTML = cards.map(([name, description]) => {
         const count = LEGAL_DOCS.filter(record => record.category === name).length;
@@ -1543,7 +1548,7 @@
     });
     document.getElementById('printDocBtn').addEventListener('click', () => window.print());
 
-    fetch('assets/legal_docs.json')
+    fetch('assets/legal_docs.json?v=20261118-2')
       .then(response => {
         if (!response.ok) throw new Error(`تعذر تحميل ملف البيانات (${response.status})`);
         return response.json();
